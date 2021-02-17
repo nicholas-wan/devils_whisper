@@ -1,0 +1,133 @@
+body {
+    background: #000;
+    margin:auto;
+    max-width: 600px;
+    font-size: 4rem;
+    letter-spacing:5px;
+    color:white;
+    font-family: Times;
+}
+
+#glitches {
+    position: relative;
+    top:300px;
+    display: block;
+}
+#main {
+    animation: fade 10s infinite;
+}
+#letters {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    color: white;
+    filter: blur(2px);
+}
+#letters .letter {
+    animation: up 5s infinite linear;
+}
+#letters .letter:nth-child(2) {
+    animation-delay: 0.3s;
+}
+#letters .letter:nth-child(3) {
+    animation-delay: 0.4s;
+}
+#letters .letter:nth-child(4) {
+    animation-delay: 0.2s;
+}
+#letters .letter:nth-child(5) {
+    animation-delay: 0.1s;
+}
+#letters .letter:nth-child(6) {
+    animation-delay: 0.3s;
+}
+#letters .letter:nth-child(7) {
+    animation-delay: 0.4s;
+}
+#letters .letter:nth-child(8) {
+    animation-delay: 0.2s;
+}
+#letters .letter:nth-child(9) {
+    animation-delay: 0.1s;
+}
+#letters .letter:nth-child(10) {
+    animation-delay: 0.4s;
+}
+#letters .letter:nth-child(11) {
+    animation-delay: 0.2s;
+}
+#letters .letter:nth-child(12) {
+    animation-delay: 0.1s;
+}
+@keyframes up {
+    0% {
+        transform: translate(0, 0) skew(0);
+   }
+    20% {
+        transform: translate(0, -10%) skew(-5deg);
+   }
+    40% {
+        transform: translate(0, -20%) skew(8deg);
+   }
+    60% {
+        transform: translate(0, -30%) skew(-7deg);
+   }
+    80% {
+        transform: translate(0, -20%) skew(4deg);
+   }
+    100% {
+        transform: translate(0, -10%) skew(0);
+        opacity: 0;
+   }
+}
+@keyframes fade {
+    0% {
+        opacity: 1;
+   }
+    30% {
+    opacity: 0.5;
+    }
+    50% {
+        opacity: 0.3;
+    }
+    70% {
+        opacity: 0.1;
+    }
+    100% {
+        opacity: 0.3;
+   }
+}
+
+.personas{
+    margin-top:400px;
+    display:flex;
+    text-align: center;
+}
+
+.column {
+    float: left;
+    width: 50%;
+  }
+
+.personaimg{
+    opacity:0.3;
+}
+
+.personaimg:hover{
+    opacity:0.8 ;
+    transform: scale(1.02);
+    transition: 2s;
+}
+.personaimg:hover > .name{
+    opacity:0.8 ;
+    transition: 2s;
+}
+
+.name{
+    font-size:20px;
+    font-family:'courier new';
+    margin-top:25px;
+    opacity:0;
+}
+
