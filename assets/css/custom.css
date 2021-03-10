@@ -10,6 +10,19 @@ body{
     text-align:center;
     color:white;
 }
+
+* {
+    -webkit-box-sizing: content-box;
+       -moz-box-sizing: content-box;
+            box-sizing: content-box;
+  }
+  *:before,
+  *:after {
+    -webkit-box-sizing: content-box;
+       -moz-box-sizing: content-box;
+            box-sizing: content-box;
+  }
+
 /* Mobile only */
 @media only screen and (max-width: 600px) {
     body {
@@ -29,7 +42,7 @@ body{
 
 #glitches {
     position: relative;
-    top:300px;
+    top:250px;
     display: block;
 }
 #main {
@@ -119,7 +132,7 @@ body{
 }
 
 .personas{
-    margin-top:400px;
+    margin-top:300px;
     display:flex;
     text-align: center;
 }
