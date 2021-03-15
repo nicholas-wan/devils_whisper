@@ -4771,7 +4771,6 @@ body.is-preload #intro:not(.hidden) + #header + #nav {
 	}
 	.spectroimage{
 		width:100%;
-		margin:auto;
 	}
 
 }
@@ -4788,8 +4787,10 @@ body.is-preload #intro:not(.hidden) + #header + #nav {
 	}
 	.spectroimage{
 		width:70%;
-		margin:auto;
 	}
+}
+.spectroimage{
+	margin:auto;
 }
 #myImage{
 	width:100%;
