@@ -4719,9 +4719,7 @@ body.is-preload #intro:not(.hidden) + #header + #nav {
 		margin:auto;
 	}
 }
-#watchtoproceed{
-	text-align:center;
-}
+
 .videorow{
 	margin:auto;
 	width:100%
@@ -4814,4 +4812,14 @@ body.is-preload #intro:not(.hidden) + #header + #nav {
 	0% { background-color: #0f2e37; box-shadow: 0 0 3px #0f2e37; }
 	50% { background-color: #18bfef; box-shadow: 0 0 20px #18bfef; }
 	100% { background-color: #0f2e37; box-shadow: 0 0 3px #0f2e37; }
+  }
+
+#watchtoproceed{
+	text-align:center;
+	animation: grow-animation 2s linear infinite !important;
+}
+@keyframes grow-animation {
+	0% { transform: scale(1.1); }
+	50% {transform: scale(1.2); }
+	100% {transform: scale(1.1); }
   }
