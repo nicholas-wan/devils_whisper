@@ -96,7 +96,7 @@ html {
 }
 
 body {
-	background-color: #000;
+	background-image: linear-gradient(#000,#444, #000) !important;
 }
 
 body.is-preload *, body.is-preload *:before, body.is-preload *:after {
