@@ -294,6 +294,13 @@ wavesurfer.on('ready', function () {
     var Y = document.getElementById("myBtn"),
       displayValue = "";
     Y.style.display = "none";
+
+    // element which needs to be scrolled to
+    var element = document.querySelector("#hideme");
+
+    // scroll to element
+    element.scrollIntoView({behavior: "smooth"})
+
   }
 
   function HideFunction2() {
@@ -306,6 +313,12 @@ wavesurfer.on('ready', function () {
     var Y = document.getElementById("myBtn2"),
       displayValue = "";
     Y.style.display = "none";
+
+    // element which needs to be scrolled to
+    var element = document.querySelector("#hideme2");
+
+    // scroll to element
+    element.scrollIntoView({behavior: "smooth"})
 	}
 
   function HideCode() {
@@ -314,6 +327,12 @@ wavesurfer.on('ready', function () {
     if (T.style.display == "") displayValue = "none";
 
     T.style.display = displayValue;
+
+    // element which needs to be scrolled to
+    var element = document.querySelector("#codeBtn");
+
+    // scroll to element
+    element.scrollIntoView({behavior: "smooth"})
   }
 
 
