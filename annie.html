@@ -43,8 +43,8 @@
             <p style="font-family: courier new">Annie</p>
 
             <p class="aboutblock">
-              Annie is a tech savvy student. She uses smart devices like iphones and Google Home. She tends to communicate with friends and family over whatsapp, and is likely to send and receive
-              media over whatsapp, including photos, videos, and links.
+              Annie is a tech savvy student. She uses smart devices like iPhone and Google Home. She tends to communicate with friends and family over WhatsApp, and is likely to send and receive
+              media over WhatsApp, including photos, videos, and links.
             </p>
           </header>
         </article>
@@ -63,11 +63,11 @@
             to do so.
           </p>
           <ul class="actions special">
-            <button onclick="HideFunction()" id="myBtn" class="primary">Ignore the update</button>
-          </ul>
+            <button onclick="HideFunction()" id="myBtn" class="primary">Ignore the update</button>  
+            </ul>
         </article>
 
-        <span id="hideme" style="display: none; border:none;">
+        <span id="hideme" style="display: none; border:none;"> 
           <article class="mainpost">
             <header>
               <span class="date" style="text-align: center"> October 2020</span>
@@ -78,7 +78,7 @@
               <br />
               <p class="aboutblock">
                 For a few months, Annie did not update her Google Home"s software, despite the reminders from the device"s application. One day, she was at home using her computer while she received a
-                whatsapp notifcation.
+                WhatsApp notifcation.
               </p>
             </div>
             <br />
@@ -193,11 +193,10 @@
         <p>A spectrogram is a visual representation of sound. The y-axis represents Frequency, the x-axis represents time, and the colour represents the audio volume, where a brighter colour represents a louder volume. We plot the Spectrograms of the audios on the Mel Scale, which is a scale that shows how humans can perceive differences in tones.
         </p>
         <div class="spectroimage">
-        <img id="myImage" src="images/mel_spectrogram_clean_audio_labelled.png">
-      </div>
-        <ul class="actions special">
-        <button onclick="changeImage()"><i class="fa fa-refresh" style='margin-right:5px;'></i>Change Spectrogram</button>
-        </ul>
+        <img id="myImage">
+          <img src="images/mel_spectrogram_clean_audio_labelled.png" style="display: none">
+          <img src="images/mel_spectrogram_adversarial_audio_labelled.png" style="display: none">
+        </div>
 
         <h2> Differences in Mel Spectrograms </h2>
 
@@ -344,15 +343,22 @@ wavesurfer.on('ready', function () {
             );
         };
 
+        var images = []
+        images[0]= 'images/mel_spectrogram_clean_audio_labelled.png'
+        images[1]='images/mel_spectrogram_adversarial_audio_labelled.png'
         var index = 0;
-        var imageList = ['images/mel_spectrogram_clean_audio_labelled.png','images/mel_spectrogram_adversarial_audio_labelled.png']
-        function changeImage() {
-          index = index + 1;
-          if (index == imageList.length) {
+
+        function change() {
+          document.getElementById("myImage").src = images[index];
+          if (index == 1) {
             index = 0;
+          } else {
+            index++;
           }
-          var image1 = document.getElementById("myImage");
-          image1.src = imageList[index];
+
+          setTimeout(change, 5000);
         }
+
+        window.onload = change();
 
 </script>

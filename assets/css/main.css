@@ -4795,3 +4795,23 @@ body.is-preload #intro:not(.hidden) + #header + #nav {
 #myImage{
 	width:100%;
 }
+
+#myBtn {
+	animation: glowing 1500ms infinite !important;
+}
+
+@keyframes glowing {
+	0% { background-color: #B20000; box-shadow: 0 0 3px #B20000; }
+	50% { background-color: #FF0000; box-shadow: 0 0 20px #FF0000; }
+	100% { background-color: #B20000; box-shadow: 0 0 3px #B20000; }
+  }
+
+  #myBtn2 {
+	animation: glowing2 1500ms infinite !important;
+}
+
+@keyframes glowing2 {
+	0% { background-color: #0f2e37; box-shadow: 0 0 3px #0f2e37; }
+	50% { background-color: #18bfef; box-shadow: 0 0 20px #18bfef; }
+	100% { background-color: #0f2e37; box-shadow: 0 0 3px #0f2e37; }
+  }
