@@ -4769,6 +4769,11 @@ body.is-preload #intro:not(.hidden) + #header + #nav {
 		padding: 4rem 2rem 2rem 2rem ;
 		border-top: solid 2px #eeeeee;
 	}
+	.spectroimage{
+		width:100%;
+		margin:auto;
+	}
+
 }
 @media screen and (min-width: 601px) {
 	.waveform-header{
@@ -4781,4 +4786,11 @@ body.is-preload #intro:not(.hidden) + #header + #nav {
 	.svimg{
 		height: 500px; 
 	}
+	.spectroimage{
+		width:70%;
+		margin:auto;
+	}
+}
+#myImage{
+	width:100%;
 }

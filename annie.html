@@ -10,6 +10,9 @@
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" />
     <!-- main wavesurfer.js lib -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/wavesurfer.js/1.2.3/wavesurfer.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/styles/default.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
   </head>
   <body class="is-preload">
     <!-- Wrapper -->
@@ -34,7 +37,6 @@
       <div id="main" class="homepage">
         <!-- Featured Post -->
 		<article class="mainpost">
-
           <header class="major">
             <h2>Background</h2>
             <img src="images/student-black.png" alt="" style="width: 10%" />
@@ -142,9 +144,71 @@
 						  </div>
 						</div>
 					  </div>
+
 				</header>
 
 			</article>
+      
+
+
+      <article class="mainpost">
+        <header>
+          <h2 style="text-align: center">Audio Analysis</h2>
+        </header>
+        <h3>Spectrogram Analysis
+          </h3>
+        <p>To understand the Hidden Audio attack, we can take a look at the Mel Spectrograms of both audios.</p>
+        <ul class="actions special">
+          <button onclick="HideCode()" id="codeBtn" class="primary"> <i class="fa fa-code"> </i> Code</button>
+        </ul>
+  
+        <span id="hidecode" style="display: none; border:none;">
+        <pre><code class="python">
+          <span class="hljs-keyword">import</span> librosa
+          <span class="hljs-keyword">import</span> librosa.display
+          <span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np
+          <span class="hljs-keyword">import</span> matplotlib.pyplot <span class="hljs-keyword">as</span> plt
+          
+          n_fft = <span class="hljs-number">2048</span>
+          hop_length = <span class="hljs-number">512</span>
+          
+          <span class="hljs-comment"># Loading the audio</span>
+          filename1 = <span class="hljs-string">'audio.wav'</span>
+          y1, sr1 = librosa.load(filename1)
+          
+          <span class="hljs-comment"># To get absolute amplitude of the short-time Fourier Transform</span>
+          D1 = np.<span class="hljs-built_in">abs</span>(librosa.stft(y1, n_fft=n_fft,  hop_length=hop_length))
+          
+          <span class="hljs-comment"># Converting amplitude to decibels</span>
+          DB1 = librosa.amplitude_to_db(D1, ref=np.<span class="hljs-built_in">max</span>)
+          
+          <span class="hljs-comment"># Plotting mel frequency spectrogram</span>
+          plt.figure(figsize=(<span class="hljs-number">10</span>,<span class="hljs-number">7</span>))
+          librosa.display.specshow(DB1, sr=sr1, hop_length=hop_length, x_axis=<span class="hljs-string">'time'</span>, y_axis=<span class="hljs-string">'log'</span>);
+          plt.colorbar(<span class="hljs-built_in">format</span>=<span class="hljs-string">'%+2.0f dB'</span>);
+          </code></pre>
+        </span>
+
+        <h2> What is a Spectrogram? </h2>
+        <p>A spectrogram is a visual representation of sound. The y-axis represents Frequency, the x-axis represents time, and the colour represents the audio volume, where a brighter colour represents a louder volume. We plot the Spectrograms of the audios on the Mel Scale, which is a scale that shows how humans can perceive differences in tones.
+        </p>
+        <div class="spectroimage">
+        <img id="myImage" src="images/mel_spectrogram_clean_audio_labelled.png">
+      </div>
+        <ul class="actions special">
+        <button onclick="changeImage()"><i class="fa fa-refresh" style='margin-right:5px;'></i>Change Spectrogram</button>
+        </ul>
+
+        <h2> Differences in Mel Spectrograms </h2>
+
+        <ol>
+          <li>The adversarial attack audio is noisier than the original audio, especially in the first few seconds where the adversarial attack was injected. This can be seen by the brighter colours in the first few seconds of the adversarial example.</li>
+          <li>Audio splicing was done at the high-frequency areas (4096-8192 Hz), which happened due to audio editing or processing during the injection of the adversarial attack</li>
+        </ol>
+
+
+
+      </article>
 
             <article class="mainpost">
 
@@ -245,6 +309,14 @@ wavesurfer.on('ready', function () {
     Y.style.display = "none";
 	}
 
+  function HideCode() {
+    var T = document.getElementById("hidecode"),
+      displayValue = "";
+    if (T.style.display == "") displayValue = "none";
+
+    T.style.display = displayValue;
+  }
+
 
   function showButton() {
     console.log("ended");
@@ -257,6 +329,30 @@ wavesurfer.on('ready', function () {
     Y.style.display = "none";
   }
 
+  window.onload = function(){
+            var codeElement = document.getElementById('python_code');
+            // Add code mirror class for coloring (default is the theme)
+            codeElement.classList.add( 'cm-s-default' );
+            var code = codeElement.innerText;
 
+            codeElement.innerHTML = "";
+
+            CodeMirror.runMode(
+              code,
+              'python',
+              codeElement
+            );
+        };
+
+        var index = 0;
+        var imageList = ['images/mel_spectrogram_clean_audio_labelled.png','images/mel_spectrogram_adversarial_audio_labelled.png']
+        function changeImage() {
+          index = index + 1;
+          if (index == imageList.length) {
+            index = 0;
+          }
+          var image1 = document.getElementById("myImage");
+          image1.src = imageList[index];
+        }
 
 </script>
