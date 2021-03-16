@@ -182,3 +182,16 @@ body{
 	61% {transform: scale(1); }
 	100% {transform: scale(1); }
   }
+
+
+@media only screen and (max-width: 600px){
+    .annieimg{
+        width:60%;
+    }
+}
+
+@media screen and (min-width: 601px) {
+    .annieimg{
+        width:35%;
+    }
+}
