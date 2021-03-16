@@ -163,3 +163,22 @@ body{
     opacity:0;
 }
 
+.personaimg {
+    animation: fadein 5s !important;
+}
+
+
+.personaimg{
+	text-align:center;
+	animation: grow-animation 5s linear infinite !important;
+}
+@keyframes grow-animation {
+	0% { transform: scale(1); }
+    43% { transform: scale(1); }
+	46% {transform: scale(1.1); }
+    49% { transform: scale(1); }
+    55% {transform: scale(1); }
+	58% {transform: scale(1.1); }
+	61% {transform: scale(1); }
+	100% {transform: scale(1); }
+  }
