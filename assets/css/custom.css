@@ -170,7 +170,7 @@ body{
 
 .personaimg{
 	text-align:center;
-	animation: grow-animation 4s linear infinite !important;
+	animation: grow-animation 5s linear infinite !important;
 }
 @keyframes grow-animation {
 	0% { transform: scale(1); }
