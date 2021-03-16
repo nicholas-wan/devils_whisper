@@ -174,18 +174,18 @@ body{
 }
 @keyframes grow-animation {
 	0% { transform: scale(1); }
-    32% { transform: scale(1); }
-    33% { transform: scale(1.15) rotate(5deg); }
-	36% {transform: scale(1.2) rotate(-5deg); }
-    39% { transform: scale(1.15) rotate(5deg); }
-    40% { transform: scale(1); }
+    52% { transform: scale(1); }
+    53% { transform: scale(1.15) rotate(5deg); }
+	56% {transform: scale(1.2) rotate(-5deg); }
+    59% { transform: scale(1.15) rotate(5deg); }
+    60% { transform: scale(1); }
 
 
-    45% { transform: scale(1); }
-    46% {transform: scale(1.15) rotate(5deg); }
-	49% {transform: scale(1.2) rotate(-5deg); }
-	52% {transform: scale(1.15) rotate(5deg); }
-    52% {transform: scale(1); }
+    65% { transform: scale(1); }
+    66% {transform: scale(1.15) rotate(5deg); }
+	69% {transform: scale(1.2) rotate(-5deg); }
+	72% {transform: scale(1.15) rotate(5deg); }
+    73% {transform: scale(1); }
 
 	100% {transform: scale(1); }
   }
