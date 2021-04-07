@@ -4767,7 +4767,10 @@ body.is-preload #intro:not(.hidden) + #header + #nav {
 		padding: 4rem 2rem 2rem 2rem ;
 		border-top: solid 2px #eeeeee;
 	}
-
+	.slideshow-container {
+		margin-left:30px;
+		margin-right:30px;
+	}
 }
 @media screen and (min-width: 601px) {
 	.waveform-header{
@@ -4779,6 +4782,9 @@ body.is-preload #intro:not(.hidden) + #header + #nav {
 	}
 	.svimg{
 		height: 500px; 
+	}
+	.slideshow-container {
+		margin:auto;
 	}
 }
 
@@ -4815,7 +4821,6 @@ body.is-preload #intro:not(.hidden) + #header + #nav {
 .slideshow-container {
     max-width: 1000px;
     position: relative;
-    margin: 20px;
 }
 
 .mySlides {
