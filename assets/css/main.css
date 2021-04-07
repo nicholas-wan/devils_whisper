@@ -4767,9 +4767,6 @@ body.is-preload #intro:not(.hidden) + #header + #nav {
 		padding: 4rem 2rem 2rem 2rem ;
 		border-top: solid 2px #eeeeee;
 	}
-	.spectroimage{
-		width:100%;
-	}
 
 }
 @media screen and (min-width: 601px) {
@@ -4783,15 +4780,6 @@ body.is-preload #intro:not(.hidden) + #header + #nav {
 	.svimg{
 		height: 500px; 
 	}
-	.spectroimage{
-		width:70%;
-	}
-}
-.spectroimage{
-	margin:auto;
-}
-#myImage{
-	width:100%;
 }
 
 #myBtn {
@@ -4823,3 +4811,61 @@ body.is-preload #intro:not(.hidden) + #header + #nav {
 	50% {transform: scale(1.2); }
 	100% {transform: scale(1.1); }
   }
+
+.slideshow-container {
+    max-width: 1000px;
+    position: relative;
+    margin: 20px;
+}
+
+.mySlides {
+    display: none;     
+}
+
+.prev,
+.next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: #222428;
+    font-weight: bold;
+    font-size: 30px;
+    transition: .6s ease;
+    border-radius: 0 3px 3px 0
+}
+
+.next {
+    right: -50px;
+    border-radius: 3px 3px 3px 3px
+}
+
+.prev {
+    left: -50px;
+    border-radius: 3px 3px 3px 3px
+}
+
+.prev:hover,
+.next:hover {
+    color: #f2f2f2;
+    background-color: rgba(0, 0, 0, 0.8)
+}
+
+
+.dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color .6s ease
+}
+
+.active,
+.dot:hover {
+    background-color: #717171
+}

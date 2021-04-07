@@ -45,6 +45,7 @@
               Annie is a tech savvy student. She uses smart devices like iPhone and Google Home. She tends to communicate with friends and family over WhatsApp, and is likely to send and receive
               media over WhatsApp, including photos, videos, and links.
             </p>
+
           </header>
         </article>
 
@@ -191,12 +192,25 @@
         <h2> What is a Spectrogram? </h2>
         <p>A spectrogram is a visual representation of sound. The y-axis represents Frequency, the x-axis represents time, and the colour represents the audio volume, where a brighter colour represents a louder volume. We plot the Spectrograms of the audios on the Mel Scale, which is a scale that shows how humans can perceive differences in tones.
         </p>
-        <div class="spectroimage">
-        <img id="myImage">
-          <img src="images/mel_spectrogram_clean_audio_labelled.png" style="display: none">
-          <img src="images/mel_spectrogram_adversarial_audio_labelled.png" style="display: none">
-        </div>
-
+        <!-- Slideshow container -->
+        <div class="slideshow-container">
+          <div class="slideshow-inner">
+            <div class="mySlides fade">
+              <img  src='images/mel_spectrogram_adversarial_audio_labelled.png' style='width: 100%;' alt="sally lightfoot crab"/>
+            </div>
+            <div class="mySlides fade">
+              <img  src='images/mel_spectrogram_clean_audio_labelled.png' style='width: 100%;' alt="fighting nazca boobies"/>
+            </div>
+            </div>
+          
+            <a class="prev" onclick='plusSlides(-1)' style='border:none;'>&#10094;</a>
+            <a class="next" onclick='plusSlides(1)' style='border:none;'>&#10095;</a>
+          </div>
+          <div style='text-align: center;'>
+            <span class="dot" onclick='currentSlide(1)'></span>
+            <span class="dot" onclick='currentSlide(2)'></span>
+          </div>
+          <br>
         <h2> Differences in Mel Spectrograms </h2>
 
         <ol>
@@ -207,7 +221,6 @@
 
 
       </article>
-
             <article class="mainpost">
 
             <div class="row">
@@ -345,37 +358,75 @@ wavesurfer.on('ready', function () {
     Y.style.display = "none";
   }
 
-  window.onload = function(){
-            var codeElement = document.getElementById('python_code');
-            // Add code mirror class for coloring (default is the theme)
-            codeElement.classList.add( 'cm-s-default' );
-            var code = codeElement.innerText;
+</script>
+<script>
+var slideIndex = 1;
 
-            codeElement.innerHTML = "";
+var myTimer;
 
-            CodeMirror.runMode(
-              code,
-              'python',
-              codeElement
-            );
-        };
+var slideshowContainer;
 
-        var images = []
-        images[0]= 'images/mel_spectrogram_clean_audio_labelled.png'
-        images[1]='images/mel_spectrogram_adversarial_audio_labelled.png'
-        var index = 0;
+window.addEventListener("load",function() {
+    showSlides(slideIndex);
+    myTimer = setInterval(function(){plusSlides(1)}, 3000);
+  
+    //COMMENT OUT THE LINE BELOW TO KEEP ARROWS PART OF MOUSEENTER PAUSE/RESUME
+    slideshowContainer = document.getElementsByClassName('slideshow-inner')[0];
+  
+    //UNCOMMENT OUT THE LINE BELOW TO KEEP ARROWS PART OF MOUSEENTER PAUSE/RESUME
+    // slideshowContainer = document.getElementsByClassName('slideshow-container')[0];
+  
+    slideshowContainer.addEventListener('mouseenter', pause)
+    slideshowContainer.addEventListener('mouseleave', resume)
+})
 
-        function change() {
-          document.getElementById("myImage").src = images[index];
-          if (index == 1) {
-            index = 0;
-          } else {
-            index++;
-          }
+// NEXT AND PREVIOUS CONTROL
+function plusSlides(n){
+  clearInterval(myTimer);
+  if (n < 0){
+    showSlides(slideIndex -= 1);
+  } else {
+   showSlides(slideIndex += 1); 
+  }
+  
+  //COMMENT OUT THE LINES BELOW TO KEEP ARROWS PART OF MOUSEENTER PAUSE/RESUME
+  
+  if (n === -1){
+    myTimer = setInterval(function(){plusSlides(n + 2)}, 3000);
+  } else {
+    myTimer = setInterval(function(){plusSlides(n + 1)}, 3000);
+  }
+}
 
-          setTimeout(change, 5000);
-        }
+//Controls the current slide and resets interval if needed
+function currentSlide(n){
+  clearInterval(myTimer);
+  myTimer = setInterval(function(){plusSlides(n + 1)}, 3000);
+  showSlides(slideIndex = n);
+}
 
-        window.onload = change();
+function showSlides(n){
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+}
 
+pause = () => {
+  clearInterval(myTimer);
+}
+
+resume = () =>{
+  clearInterval(myTimer);
+  myTimer = setInterval(function(){plusSlides(slideIndex)}, 4000);
+}
 </script>
