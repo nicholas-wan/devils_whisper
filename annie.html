@@ -99,13 +99,13 @@
           <span id="hideme2">
             <article class="mainpost">
               <header>
-                <h2 style="text-align: center;">Adversarial Attack</h2>
+                <h2 style="text-align: center;">Hidden Audio Attack</h2>
               </header>
               <div class="image fit">
                 <img class="svimg" src="https://live.staticflickr.com/747/33433114246_e160efdba1_c.jpg" alt="" style="object-fit:cover;" style='width:80%; margin:auto;'/>
                 <br />
                 <p class="aboutblock">
-                  The advertisement contained a hidden voice attack that targetted smart home assistants. This audio was not clearly audible to annie, but was intended to <u>deceive the machine learning models</u> in smart home devices with voice command controls, such as Annie's Google Home. 
+                  The advertisement contained a hidden voice attack that targetted smart home assistants. This audio was not clearly audible to annie, but her Google Home picked up the command.
                   
                 </p>
                <p class="aboutblock">Fortunately, the attacker did not have any malicious intentions and only used a benign command to "Play Music". <b>In one worst case scenario</b>, if Annie had used a smart doorlock system or alarm system, the attacker could have disabled the systems to gain entry to her house. 
@@ -114,8 +114,26 @@
             </article>
 
             <article class="mainpost">
+              <header>
+                <h2 style="text-align: center;">What are Adversarial Attacks?</h2>
+              </header>
+              <div class="image fit">
+                <img class="bananagif" src="images/adversarial_patch.gif" alt="" style="object-fit:contain; margin:auto;"/>
+                <br />
+                <p class="aboutblock">
+                  Adversarial Attacks are machine learning techniques intended to <u>deceive the machine learning models</u> by supplying deceiving input. <a href="https://en.wikipedia.org/wiki/Adversarial_machine_learning"><i>(Source: Wikipedia)</i></a>
+                </p>
+               <p class="aboutblock">
+                 In the GIF above, an example Adversarial Attack was conducted by <a href="https://arxiv.org/pdf/1712.09665.pdf">researchers that were making targeted adversarial image patches </a>to deceive deep learning models. In this case, a banana was wrongly predicted to be a toaster due to the presence of the sticker patch.
+                </p>
+              </div>
+            </article>
+
+            <article class="mainpost">
 				<header>
 					<h2 style="text-align:center;">Audio Waveforms</h2>
+          <p class="aboutblock">
+            Here, we present the two different audios and their corresponding waveforms. </p>
 					<div class="waveform-container">
 						<div class="cardbody">
 						  <h3 class="waveform-header">Clean Audio Waveform</h3>
@@ -135,6 +153,7 @@
 					  <div class="waveform-container">
 						<div class="cardbody">
 						  <h3 class="waveform-header">Adversarial Audio Waveform</h3>
+              
 						  <div class="card">
 							<div id="waveform2"></div>
 						  </div>
