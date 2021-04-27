@@ -7,7 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale = 1.0, maximum-scale=1.0, user-scalable=no" />
     <link rel="stylesheet" href="assets/css/main.css" />
     <link rel="shortcut icon" type="image/png" href="images/favicon.png" />
-    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="assets/css/fontawesome/all.css" rel="stylesheet"> <!--load all styles -->
+
     <!-- main wavesurfer.js lib -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/wavesurfer.js/1.2.3/wavesurfer.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/styles/default.min.css">
@@ -17,11 +18,11 @@
   <body class="is-preload">
     <!-- Wrapper -->
     <div id="wrapper">
-      <a href="#header" id="return-to-top" style="display: inline"><i class="icon fa-chevron-up"></i></a>
+      <a href="#header" id="return-to-top" style="display: inline"><i class="fas fa-chevron-up" style="padding-top:12px"></i></a>
 
       <!-- Header -->
       <header id="header">
-        <a href="index.html" class="logo icon fa-home"></a>
+        <a href="index.html" class="logo icon"><i class="fas fa-home"></i></a>
       </header>
 
       <!-- Nav -->
@@ -53,12 +54,13 @@
             <span class="date" style="text-align: center">May 2021</span>
             <h2 style="text-align: center">After a long school day</h2>
           </header>
+
           <div class="image fit">
             <img class="svimg" src="images/living_room.jpeg" alt="" style="object-fit:cover;"/>
           </div>
           <br />
           <p class="aboutblock">
-            One day after school, Annie turns on her Google Home smart device to listen to some music .
+            One day after school, Annie turns on her Google Home smart device to listen to some music.
           </p>
           <ul class="actions special">
             <button onclick="HideFunction()" id="myBtn" class="primary">Proceed with Story</button>  
@@ -139,7 +141,7 @@
 						  </div>
 						  <div class="card-footer">
 							<button class="btn btn-primary waveform-button" onclick="wavesurfer.playPause()">
-							  <i class="fa fa-play"></i>
+							  <i class="fas fa-play"></i>
 							  Play
 							</button>
 						  </div>
@@ -156,7 +158,7 @@
 						  </div>
 						  <div class="card-footer">
 							<button class="btn btn-primary waveform-button waveform-button2" onclick="wavesurfer2.playPause()">
-							  <i class="fa fa-play"></i>
+							  <i class="fas fa-play"></i>
 							  Play
 							</button>
 						  </div>
@@ -177,7 +179,7 @@
           </h3>
         <p>To understand the Hidden Audio attack, we can take a look at the Mel Spectrograms of both audio clips.</p>
         <ul class="actions special">
-          <button onclick="HideCode()" id="codeBtn" class="primary"> <i class="fa fa-code"> </i> Code</button>
+          <button onclick="HideCode()" id="codeBtn" class="primary"> <i class="fas fa-code"> </i> Code</button>
         </ul>
   
         <span id="hidecode" style="display: none; border:none;">
@@ -211,6 +213,7 @@
         <p>A spectrogram is a visual representation of sound. The y-axis represents Frequency, the x-axis represents Time, and the colour represents the audio volume. The brightness is propotional to the volume. For example, a brighter colour means that the audio is louder. We plot the spectrograms of the audio clips on the Mel Scale, which is a scale that shows how humans can perceive differences in tones.
         </p>
         <!-- Slideshow container -->
+        <div class='mobileonly'>
         <div class="slideshow-container">
           <div class="slideshow-inner">
             <div class="mySlides fade">
@@ -228,15 +231,15 @@
             <span class="dot" onclick='currentSlide(1)'></span>
             <span class="dot" onclick='currentSlide(2)'></span>
           </div>
+        </div>
 
-          <!-- <div class="rowimg">
-            <div class="columnimg">
-              <img  src='images/mel_spectrogram_adversarial_audio_labelled.png'/>
+          <div class='desktoponly'>
+            <div class="rowimg">
+              <img src='images/mel_spectrogram_adversarial_audio_labelled.png'/>
+              <img src='images/mel_spectrogram_clean_audio_labelled.png'/>
             </div>
-              <div class="columnimg">
-                <img  src='images/mel_spectrogram_clean_audio_labelled.png'/>
-              </div>  
-          </div> -->
+            <div class="clear"></div>
+          </div>
 
 
           
@@ -277,7 +280,7 @@
           <section>
             <ul class="icons alt">
               <li>
-                <a href="about.html" class="icon fa fa-info"><span class="label">About</span></a>
+                <a href="about.html" style='border:0px !important'><i class="fas fa-info-circle" style='font-size:25px !important'></i></a>
               </li>
             </ul>
           </section>

@@ -4671,7 +4671,7 @@ body.is-preload #intro:not(.hidden) + #header + #nav {
     -moz-transition: all 0.3s ease;
     -ms-transition: all 0.3s ease;
     -o-transition: all 0.3s ease;
-	transition: all 0.3s ease;
+	transition: all 1s ease !important;
 	opacity: 0.4; /* Standard compliant browsers */
     -moz-opacity: 0.4; /* Firefox and Mozilla browsers */
     -webkit-opacity: 0.4; /* WebKit browser e.g. Safari */
@@ -4879,4 +4879,34 @@ body.is-preload #intro:not(.hidden) + #header + #nav {
 .active,
 .dot:hover {
     background-color: #717171
+}
+
+.rowimg img {
+	display: inline-block;
+	width: 48%;
+	height: auto;
+	margin-left: -2px;
+	box-sizing: border-box;
+  }
+
+.rowimg:hover img{
+	transform:scale(0.95);
+	transition: 1s ease !important;
+}
+
+.rowimg img:hover{
+	transform:scale(1.05);
+	transition: 1s ease !important;
+}
+
+@media only screen and (max-width: 600px){
+    .desktoponly{
+		display:none;
+	}
+}
+
+@media screen and (min-width: 601px) {
+    .mobileonly{
+		display:none;
+	}
 }
